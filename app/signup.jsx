@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
@@ -17,6 +17,7 @@ export default function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleSignUp = async () => {
     if (!email || !password || !username) {
@@ -40,6 +41,7 @@ export default function SignUp() {
       });
 
       Alert.alert('Success', 'Account created successfully!');
+      router.replace('/goals'); 
     } catch (error) {
       console.error(error);
       Alert.alert('Sign Up Error', error.message);

@@ -46,18 +46,15 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.title}>MOODSCAPE</Text>
       </View>
 
-      {/* Greeting */}
       <View style={styles.content}>
         <Text style={styles.greeting}>Welcome!</Text>
         <Text style={styles.subheading}>Boost your mood with these quotes.</Text>
       </View>
 
-      {/* Quotes */}
       <ScrollView contentContainerStyle={styles.quoteList}>
         {quotes.map((quote) => (
           <View key={quote.id} style={styles.card}>
@@ -77,7 +74,6 @@ const Home = () => {
         ))}
       </ScrollView>
 
-      {/* Modal for full quote */}
       <Modal
         visible={modalVisible}
         transparent={true}
@@ -103,7 +99,7 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FAF9F6', paddingHorizontal: 24, paddingTop: 24 },
+  container: {flex: 1, backgroundColor: '#FAF9F6', paddingLeft: 24, paddingRight: 24, paddingTop: 24, },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, marginTop: 24, },
   title: { fontSize: 28, fontWeight: 'bold', color: '#14532D' },
   content: { marginBottom: 16 },
